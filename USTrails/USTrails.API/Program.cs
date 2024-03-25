@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using USTrails.API.Data;
+using USTrails.API.Mappings;
+using USTrails.API.Repositories;
 
 namespace USTrails.API
 {
@@ -12,7 +14,6 @@ namespace USTrails.API
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -20,6 +21,10 @@ namespace USTrails.API
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("USTrailsConnectionString"));
             });
+
+            builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
+
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
             var app = builder.Build();
 
