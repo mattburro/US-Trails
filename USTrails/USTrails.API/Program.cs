@@ -22,7 +22,7 @@ namespace USTrails.API
                 options.UseSqlServer(builder.Configuration.GetConnectionString("USTrailsConnectionString"));
             });
 
-            builder.Services.AddScoped<IRegionRepository, SQLRegionRepository>();
+            builder.Services.AddScoped<IStateRepository, SQLStateRepository>();
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 

@@ -8,9 +8,9 @@ namespace USTrails.API.Mappings
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Region, RegionDto>().ReverseMap();
-            CreateMap<AddRegionRequestDto, Region>();
-            CreateMap<UpdateRegionRequestDto, Region>();
+            CreateMap<State, StateDto>().ReverseMap();
+            CreateMap<AddStateRequestDto, State>();
+            CreateMap<UpdateStateRequestDto, State>();
         }
     }
 }

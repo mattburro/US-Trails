@@ -10,7 +10,7 @@ namespace USTrails.API.Data
         }
 
         public DbSet<Difficulty> Difficulties { get; set; }
-        public DbSet<Region> Regions { get; set; }
+        public DbSet<State> States { get; set; }
         public DbSet<Trail> Trails { get; set; }
     }
 }

@@ -8,12 +8,12 @@
         public double LengthInMi { get; set; }
         public string? TrailImageUrl { get; set; }
         public Guid DifficultyId { get; set; }
-        public Guid RegionId { get; set; }
+        public Guid StateId { get; set; }
 
         #region Navigation Properties
 
         public Difficulty Difficulty { get; set; }
-        public Region Region { get; set; }
+        public State State { get; set; }
 
         #endregion
     }
