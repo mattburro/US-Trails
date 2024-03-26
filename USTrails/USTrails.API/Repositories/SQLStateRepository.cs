@@ -13,6 +13,14 @@ namespace USTrails.API.Repositories
             this.dbContext = dbContext;
         }
 
+        public async Task<State> CreateAsync(State newState)
+        {
+            await dbContext.States.AddAsync(newState);
+            await dbContext.SaveChangesAsync();
+
+            return newState;
+        }
+
         public async Task<List<State>> GetAllAsync()
         {
             return await dbContext.States.ToListAsync();
@@ -21,14 +29,6 @@ namespace USTrails.API.Repositories
         public async Task<State?> GetByIdAsync(Guid id)
         {
             return await dbContext.States.FirstOrDefaultAsync(r => r.Id == id);
-        }
-
-        public async Task<State> CreateAsync(State newState)
-        {
-            await dbContext.States.AddAsync(newState);
-            await dbContext.SaveChangesAsync();
-
-            return newState;
         }
 
         public async Task<State?> UpdateAsync(Guid id, State updatedState)

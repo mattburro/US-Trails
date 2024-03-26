@@ -19,6 +19,19 @@ namespace USTrails.API.Controllers
             this.mapper = mapper;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] AddStateRequestDto requestDto)
+        {
+            // Map DTO to domain model
+            var state = mapper.Map<State>(requestDto);
+
+            // Use domain model to create state
+            state = await stateRepository.CreateAsync(state);
+
+            // Return DTO
+            return CreatedAtAction(nameof(GetById), new { id = state.Id }, mapper.Map<StateDto>(state));
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -43,19 +56,6 @@ namespace USTrails.API.Controllers
 
             // Return DTO
             return Ok(mapper.Map<StateDto>(state));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] AddStateRequestDto requestDto)
-        {
-            // Map DTO to domain model
-            var state = mapper.Map<State>(requestDto);
-
-            // Use domain model to create state
-            state = await stateRepository.CreateAsync(state);
-
-            // Return DTO
-            return CreatedAtAction(nameof(GetById), new { id = state.Id }, mapper.Map<StateDto>(state));
         }
 
         [HttpPut("{id:Guid}")]

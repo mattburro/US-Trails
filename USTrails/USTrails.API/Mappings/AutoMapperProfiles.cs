@@ -11,6 +11,9 @@ namespace USTrails.API.Mappings
             CreateMap<State, StateDto>().ReverseMap();
             CreateMap<AddStateRequestDto, State>();
             CreateMap<UpdateStateRequestDto, State>();
+            CreateMap<AddTrailRequestDto, Trail>().ReverseMap();
+            CreateMap<Trail, TrailDto>().ReverseMap();
+            CreateMap<Difficulty, DifficultyDto>().ReverseMap();
         }
     }
 }

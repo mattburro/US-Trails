@@ -23,6 +23,7 @@ namespace USTrails.API
             });
 
             builder.Services.AddScoped<IStateRepository, SQLStateRepository>();
+            builder.Services.AddScoped<ITrailRepository, SQLTrailRepository>();
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
