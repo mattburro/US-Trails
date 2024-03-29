@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using USTrails.API.Data;
 
@@ -11,9 +12,11 @@ using USTrails.API.Data;
 namespace USTrails.API.Migrations
 {
     [DbContext(typeof(USTrailsDbContext))]
-    partial class USTrailsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240329203705_Create many-to-many Trails-States")]
+    partial class CreatemanytomanyTrailsStates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,12 +30,12 @@ namespace USTrails.API.Migrations
                     b.Property<Guid>("StatesId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("TrailId")
+                    b.Property<Guid>("TrailsId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("StatesId", "TrailId");
+                    b.HasKey("StatesId", "TrailsId");
 
-                    b.HasIndex("TrailId");
+                    b.HasIndex("TrailsId");
 
                     b.ToTable("StateTrail");
                 });
@@ -493,7 +496,7 @@ namespace USTrails.API.Migrations
 
                     b.HasOne("USTrails.API.Models.Domain.Trail", null)
                         .WithMany()
-                        .HasForeignKey("TrailId")
+                        .HasForeignKey("TrailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

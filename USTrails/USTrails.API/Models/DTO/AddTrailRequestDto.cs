@@ -7,6 +7,6 @@
         public double LengthInMi { get; set; }
         public string? TrailImageUrl { get; set; }
         public Guid DifficultyId { get; set; }
-        public Guid StateId { get; set; }
+        public List<Guid> StateIds { get; set; }
     }
 }

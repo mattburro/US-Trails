@@ -23,11 +23,8 @@ namespace USTrails.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddTrailRequestDto requestDto)
         {
-            // Map DTO to domain model
-            var trail = mapper.Map<Trail>(requestDto);
-
-            // Use domain model to create trail
-            trail = await trailRepository.CreateAsync(trail);
+            // Use request model to create trail
+            var trail = await trailRepository.CreateAsync(requestDto);
 
             // Return DTO
             return Ok(mapper.Map<TrailDto>(trail));

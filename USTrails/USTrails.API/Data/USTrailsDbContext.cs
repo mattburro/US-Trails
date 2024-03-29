@@ -5,9 +5,7 @@ namespace USTrails.API.Data
 {
     public class USTrailsDbContext : DbContext
     {
-        public USTrailsDbContext(DbContextOptions options) : base(options)
-        { 
-        }
+        public USTrailsDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Difficulty> Difficulties { get; set; }
         public DbSet<State> States { get; set; }
@@ -16,6 +14,13 @@ namespace USTrails.API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Create uni-directional many-to-many relationship from Trails to States
+            modelBuilder.Entity<Trail>().HasMany(t => t.States).WithMany();
+
+            // Always include all Trail navigation properties
+            modelBuilder.Entity<Trail>().Navigation(t => t.Difficulty).AutoInclude();
+            modelBuilder.Entity<Trail>().Navigation(t => t.States).AutoInclude();
 
             // Seed difficulty data
             var difficulties = new List<Difficulty>
