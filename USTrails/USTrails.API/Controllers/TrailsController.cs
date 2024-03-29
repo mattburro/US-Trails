@@ -27,7 +27,7 @@ namespace USTrails.API.Controllers
             var trail = mapper.Map<Trail>(requestDto);
 
             // Use domain model to create trail
-            await trailRepository.CreateAsync(trail);
+            trail = await trailRepository.CreateAsync(trail);
 
             // Return DTO
             return Ok(mapper.Map<TrailDto>(trail));
@@ -41,6 +41,22 @@ namespace USTrails.API.Controllers
 
             // Return DTOs
             return Ok(mapper.Map<List<TrailDto>>(trails));
+        }
+
+        [HttpGet("{id:Guid}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            // Get trail from database
+            var trail = await trailRepository.GetByIdAsync(id);
+
+            // No trail found
+            if (trail == null)
+            {
+                return NotFound();
+            }
+
+            // Return DTO
+            return Ok(mapper.Map<TrailDto>(trail));
         }
     }
 }

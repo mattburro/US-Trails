@@ -25,5 +25,10 @@ namespace USTrails.API.Repositories
         {
             return await dbContext.Trails.Include("Difficulty").Include("State").ToListAsync();
         }
+
+        public async Task<Trail?> GetByIdAsync(Guid id)
+        {
+            return await dbContext.Trails.Include("Difficulty").Include("State").SingleOrDefaultAsync(t => t.Id == id);
+        }
     }
 }
