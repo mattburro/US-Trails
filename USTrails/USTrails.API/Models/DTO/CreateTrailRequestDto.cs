@@ -1,6 +1,6 @@
 ﻿namespace USTrails.API.Models.DTO
 {
-    public class AddTrailRequestDto
+    public class CreateTrailRequestDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

@@ -21,7 +21,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] AddTrailRequestDto requestDto)
+        public async Task<IActionResult> Create([FromBody] CreateTrailRequestDto requestDto)
         {
             // Use request model to create trail
             var trail = await trailRepository.CreateAsync(requestDto);

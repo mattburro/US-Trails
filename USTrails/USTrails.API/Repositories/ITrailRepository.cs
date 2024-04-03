@@ -5,7 +5,7 @@ namespace USTrails.API.Repositories
 {
     public interface ITrailRepository
     {
-        Task<Trail> CreateAsync(AddTrailRequestDto requestDto);
+        Task<Trail> CreateAsync(CreateTrailRequestDto requestDto);
         Task<List<Trail>> GetAllAsync();
         Task<Trail?> GetByIdAsync(Guid id);
     }
