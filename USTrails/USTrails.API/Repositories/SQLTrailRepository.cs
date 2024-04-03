@@ -23,7 +23,9 @@ namespace USTrails.API.Repositories
                 Description = requestDto.Description,
                 LengthInMi = requestDto.LengthInMi,
                 TrailImageUrl = requestDto.TrailImageUrl,
+                DifficultyId = requestDto.DifficultyId,
                 Difficulty = dbContext.Difficulties.Single(d => d.Id == requestDto.DifficultyId),
+                StateIds = requestDto.StateIds,
                 States = requestDto.StateIds.Select(id => dbContext.States.Single(s => s.Id ==  id)).ToList()
             };
 
