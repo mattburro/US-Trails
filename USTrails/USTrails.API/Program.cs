@@ -24,6 +24,7 @@ namespace USTrails.API
 
             builder.Services.AddScoped<IStateRepository, SQLStateRepository>();
             builder.Services.AddScoped<ITrailRepository, SQLTrailRepository>();
+            builder.Services.AddScoped<IDifficultyRepository, SQLDifficultyRepository>();
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
