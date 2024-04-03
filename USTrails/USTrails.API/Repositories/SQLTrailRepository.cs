@@ -67,5 +67,20 @@ namespace USTrails.API.Repositories
 
             return existingTrail;
         }
+
+        public async Task<Trail?> DeleteAsync(Guid id)
+        {
+            var existingWalk = await GetByIdAsync(id);
+
+            if ( existingWalk == null)
+            {
+                return null;
+            }
+
+            dbContext.Trails.Remove(existingWalk);
+            await dbContext.SaveChangesAsync();
+
+            return existingWalk;
+        }
     }
 }

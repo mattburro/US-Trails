@@ -9,5 +9,6 @@ namespace USTrails.API.Repositories
         Task<List<Trail>> GetAllAsync();
         Task<Trail?> GetByIdAsync(Guid id);
         Task<Trail?> UpdateAsync(Guid id, UpdateTrailRequestDto updateRequest);
+        Task<Trail?> DeleteAsync(Guid id);
     }
 }

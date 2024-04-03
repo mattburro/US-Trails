@@ -24,10 +24,10 @@ namespace USTrails.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateTrailRequestDto createRequestDto)
         {
             // Use request model to create trail
-            var trail = await trailRepository.CreateAsync(createRequestDto);
+            var createdTrail = await trailRepository.CreateAsync(createRequestDto);
 
             // Return DTO
-            return Ok(mapper.Map<TrailDto>(trail));
+            return Ok(mapper.Map<TrailDto>(createdTrail));
         }
 
         [HttpGet]
@@ -41,7 +41,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpGet("{id:Guid}")]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             // Get trail from database
             var trail = await trailRepository.GetByIdAsync(id);
@@ -57,19 +57,35 @@ namespace USTrails.API.Controllers
         }
 
         [HttpPut("{id:Guid}")]
-        public async Task<IActionResult> Update(Guid id, UpdateTrailRequestDto updateRequestDto)
+        public async Task<IActionResult> Update([FromRoute] Guid id, UpdateTrailRequestDto updateRequestDto)
         {
             // Use request model to update trail
-            var trail = await trailRepository.UpdateAsync(id, updateRequestDto);
+            var updatedTrail = await trailRepository.UpdateAsync(id, updateRequestDto);
 
             // No trail found
-            if (trail == null)
+            if (updatedTrail == null)
             {
                 return NotFound();
             }
 
             // Return DTO
-            return Ok(mapper.Map<TrailDto>(trail));
+            return Ok(mapper.Map<TrailDto>(updatedTrail));
+        }
+
+        [HttpDelete("{id:Guid}")]
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
+        {
+            // Delete trail using id
+            var deletedTrail = await trailRepository.DeleteAsync(id);
+
+            // No trail found
+            if (deletedTrail == null)
+            {
+                return NotFound();
+            }
+
+            // Return DTO
+            return Ok(mapper.Map<TrailDto>(deletedTrail));
         }
     }
 }
