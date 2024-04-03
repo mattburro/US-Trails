@@ -9,8 +9,6 @@ namespace USTrails.API.Mappings
         public AutoMapperProfiles()
         {
             CreateMap<State, StateDto>().ReverseMap();
-            CreateMap<AddStateRequestDto, State>();
-            CreateMap<UpdateStateRequestDto, State>();
             CreateMap<Trail, TrailDto>().ReverseMap();
             CreateMap<Difficulty, DifficultyDto>().ReverseMap();
         }
