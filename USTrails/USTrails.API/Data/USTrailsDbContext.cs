@@ -51,7 +51,6 @@ namespace USTrails.API.Data
                     Name = "Very Strenuous"
                 }
             };
-
             modelBuilder.Entity<Difficulty>().HasData(difficulties);
 
             // Seed state data
@@ -408,8 +407,19 @@ namespace USTrails.API.Data
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Wyoming_in_United_States.svg/1280px-Wyoming_in_United_States.svg.png"
                 }
             };
-
             modelBuilder.Entity<State>().HasData(states);
+
+            // Seed trail data
+            var trails = new List<Trail>
+            {
+                // 11 National Sceneic Trails
+                new Trail
+                {
+                    Id = Guid.Parse("0a8925e9-55d8-492f-8bb4-5f7b7a8c14d5"),
+                    Name = "Appalachian Trail",
+                },
+                // 19 National Historic Trails
+            };
         }
     }
 }
