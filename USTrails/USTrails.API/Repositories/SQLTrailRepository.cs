@@ -14,7 +14,7 @@ namespace USTrails.API.Repositories
             this.dbContext = dbContext;
         }
 
-        public async Task<Trail> CreateAsync(AddTrailRequestDto requestDto)
+        public async Task<Trail> CreateAsync(CreateTrailRequestDto requestDto)
         {
             var trail = new Trail
             {

@@ -19,19 +19,6 @@ namespace USTrails.API.Controllers
             this.mapper = mapper;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] AddStateRequestDto requestDto)
-        {
-            // Map DTO to domain model
-            var state = mapper.Map<State>(requestDto);
-
-            // Use domain model to create state
-            state = await stateRepository.CreateAsync(state);
-
-            // Return DTO
-            return CreatedAtAction(nameof(GetById), new { id = state.Id }, mapper.Map<StateDto>(state));
-        }
-
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -47,41 +34,6 @@ namespace USTrails.API.Controllers
         {
             // Get matching state from database
             var state = await stateRepository.GetByIdAsync(id);
-
-            // Check if state is null
-            if (state == null)
-            {
-                return NotFound();
-            }
-
-            // Return DTO
-            return Ok(mapper.Map<StateDto>(state));
-        }
-
-        [HttpPut("{id:Guid}")]
-        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateStateRequestDto requestDto)
-        {
-            // Map DTO to domain model
-            var state = mapper.Map<State>(requestDto);
-
-            // Use domain model to update state
-            state = await stateRepository.UpdateAsync(id, state);
-
-            // Check if state is null
-            if (state == null)
-            {
-                return NotFound();
-            }
-
-            // Return DTO
-            return Ok(mapper.Map<StateDto>(state));
-        }
-
-        [HttpDelete("{id:guid}")]
-        public async Task<IActionResult> Delete([FromRoute] Guid id)
-        {
-            // Try to delete state
-            var state = await stateRepository.DeleteAsync(id);
 
             // Check if state is null
             if (state == null)
