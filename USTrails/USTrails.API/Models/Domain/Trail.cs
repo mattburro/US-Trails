@@ -1,4 +1,6 @@
-﻿namespace USTrails.API.Models.Domain
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace USTrails.API.Models.Domain
 {
     public class Trail
     {
@@ -9,8 +11,11 @@
         public string? TrailImageUrl { get; set; }
 
         #region Navigation Properties
+        public byte DifficultyId { get; set; }
         public Difficulty Difficulty { get; set; }
-        public List<State> States { get; set; } = [];
+        [ForeignKey(nameof(States))]
+        public ICollection<byte> StateIds { get; set; } = new List<byte>();
+        public ICollection<State> States { get; set; } = new List<State>();
         #endregion
     }
 }

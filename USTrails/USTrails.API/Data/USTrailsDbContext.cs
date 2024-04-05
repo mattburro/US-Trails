@@ -27,27 +27,27 @@ namespace USTrails.API.Data
             {
                 new Difficulty
                 {
-                    Id = Guid.Parse("6262a129-4480-400b-a995-2f5e6754a612"),
+                    Id = 1,
                     Name = "Easy"
                 },
                 new Difficulty
                 {
-                    Id = Guid.Parse("b6477ddd-ef84-45a6-a884-c1804dfe1734"),
+                    Id = 2,
                     Name = "Moderate"
                 },
                 new Difficulty
                 {
-                    Id = Guid.Parse("df9787f4-022c-419e-9eff-1686cacb41a3"),
+                    Id = 3,
                     Name = "Moderately Strenuous"
                 },
                 new Difficulty
                 {
-                    Id = Guid.Parse("0a02d28f-886c-441d-8820-52c7c30b41c4"),
+                    Id = 4,
                     Name = "Strenuous"
                 },
                 new Difficulty
                 {
-                    Id = Guid.Parse("f683d2b7-7c10-428c-9ede-327dcf0aa316"),
+                    Id = 5,
                     Name = "Very Strenuous"
                 }
             };
@@ -58,350 +58,350 @@ namespace USTrails.API.Data
             {
                 new State
                 {
-                    Id = Guid.Parse("e7cb93a5-be60-4dfb-a9be-0a956bdf8195"),
+                    Id = 1,
                     Name = "Alabama",
                     Code = "AL",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/1280px-Alabama_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("3544c4ce-0605-4e2d-b0e4-76a8b2f16538"),
+                    Id = 2,
                     Name = "Alaska",
                     Code = "AK",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Alaska_in_United_States_%28US50%29.svg/1280px-Alaska_in_United_States_%28US50%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("854dec35-37e8-4ea7-bc9f-168d36ba8c86"),
+                    Id = 3,
                     Name = "Arizona",
                     Code = "AZ",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Arizona_in_United_States.svg/1280px-Arizona_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("6cfc5be5-7117-4692-abb3-415c78f20a59"),
+                    Id = 4,
                     Name = "Arkansas",
                     Code = "AR",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Arkansas_in_United_States.svg/1280px-Arkansas_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("0537c8b4-319e-44e8-b761-c93769d0934f"),
+                    Id = 5,
                     Name = "California",
                     Code = "CA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/California_in_United_States.svg/1280px-California_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("2f4d1f5d-c324-45ec-995c-998241a8abab"),
+                    Id = 6,
                     Name = "Colorado",
                     Code = "CO",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Colorado_in_United_States.svg/1280px-Colorado_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("967feb0a-b817-436e-b972-3596ea0fc867"),
+                    Id = 7,
                     Name = "Connecticut",
                     Code = "CT",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Connecticut_in_United_States_%28zoom%29.svg/1280px-Connecticut_in_United_States_%28zoom%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("35b0e64c-f16b-4ea5-a986-43cfbc6bc30a"),
+                    Id = 8,
                     Name = "Delaware",
                     Code = "DE",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Delaware_in_United_States_%28zoom%29.svg/1280px-Delaware_in_United_States_%28zoom%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("6ff3a5c0-f6bb-4155-841a-f6307f6207a9"),
+                    Id = 9,
                     Name = "Florida",
                     Code = "FL",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Florida_in_United_States.svg/1280px-Florida_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("1f5dc017-9bcc-4779-b330-61e188d760c7"),
+                    Id = 10,
                     Name = "Georgia",
                     Code = "GA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Georgia_in_United_States.svg/1280px-Georgia_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("2fa13bd0-df50-40a0-844f-ae980b46a70f"),
+                    Id = 11,
                     Name = "Hawaii",
                     Code = "HI",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Hawaii_in_United_States_%28US50%29_%28%2Bgrid%29_%28zoom%29_%28W3%29.svg/1280px-Hawaii_in_United_States_%28US50%29_%28%2Bgrid%29_%28zoom%29_%28W3%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("b4037d9f-3c34-41f2-9d15-a79ca34d5dd8"),
+                    Id = 12,
                     Name = "Idaho",
                     Code = "ID",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Idaho_in_United_States.svg/1280px-Idaho_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("f54fde70-973f-40b5-9aa9-e2ee19f45064"),
+                    Id = 13,
                     Name = "Illinois",
                     Code = "IL",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Illinois_in_United_States.svg/1280px-Illinois_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("9f378ece-c448-4f8d-bd5d-4edec7f86318"),
+                    Id = 14,
                     Name = "Indiana",
                     Code = "IN",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Indiana_in_United_States.svg/1280px-Indiana_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("7ac1ecd0-c771-44db-9eab-3dda80fe9069"),
+                    Id = 15,
                     Name = "Iowa",
                     Code = "IA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Iowa_in_United_States.svg/1280px-Iowa_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("469f0508-57e2-4940-b3d7-a53f5c624613"),
+                    Id = 16,
                     Name = "Kansas",
                     Code = "KS",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Kansas_in_United_States.svg/1280px-Kansas_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("5407308f-0f66-495e-bcf9-539907ce05be"),
+                    Id = 17,
                     Name = "Kentucky",
                     Code = "KY",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Kentucky_in_United_States.svg/1280px-Kentucky_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("b9a02294-cca4-46b8-a225-72f7ba6932a6"),
+                    Id = 18,
                     Name = "Louisiana",
                     Code = "LA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Louisiana_in_United_States.svg/1280px-Louisiana_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("c717f0e4-9c16-47a5-bbd5-5430dd0b50b2"),
+                    Id = 19,
                     Name = "Maine",
                     Code = "ME",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Maine_in_United_States.svg/1280px-Maine_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("09b64fb9-b780-4bbc-8ee1-3db8ec957742"),
+                    Id = 20,
                     Name = "Maryland",
                     Code = "MD",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Maryland_in_United_States_%28zoom%29.svg/1280px-Maryland_in_United_States_%28zoom%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("03f30dba-47b7-41db-bcb3-bc60144acaa2"),
+                    Id = 21,
                     Name = "Massachusetts",
                     Code = "MA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Massachusetts_in_United_States.svg/1280px-Massachusetts_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("10817ba2-bfe9-4a11-ae2d-46ae7602ad72"),
+                    Id = 22,
                     Name = "Michigan",
                     Code = "MI",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Michigan_in_United_States.svg/1280px-Michigan_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("ca0eb5ca-1793-4818-b80b-60b6d9714e3a"),
+                    Id = 23,
                     Name = "Minnesota",
                     Code = "MN",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Minnesota_in_United_States.svg/1280px-Minnesota_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("1366d132-2e14-45db-8313-b7134c984ce5"),
+                    Id = 24,
                     Name = "Mississippi",
                     Code = "MS",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Mississippi_in_United_States.svg/1280px-Mississippi_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("43a2421e-479c-4701-b887-8ac81769cf93"),
+                    Id = 25,
                     Name = "Missouri",
                     Code = "MO",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Missouri_in_United_States.svg/1280px-Missouri_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("47b69816-bc48-4d2a-a2fd-f0e991415a11"),
+                    Id = 26,
                     Name = "Montana",
                     Code = "MT",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Montana_in_United_States.svg/1280px-Montana_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("856a70b8-f381-4a58-bd98-cc4910b86dea"),
+                    Id = 27,
                     Name = "Nebraska",
                     Code = "NE",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Nebraska_in_United_States.svg/1280px-Nebraska_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("4ad8a60c-79eb-4375-9335-9fd8971c2a8a"),
+                    Id = 28,
                     Name = "Nevada",
                     Code = "NV",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nevada_in_United_States.svg/1280px-Nevada_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("e14d2f64-2f75-4f89-b690-41132ed40627"),
+                    Id = 29,
                     Name = "New Hampshire",
                     Code = "NH",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/New_Hampshire_in_United_States.svg/1280px-New_Hampshire_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("d1920c2b-4e46-44fd-9a03-2707d5b6feb4"),
+                    Id = 30,
                     Name = "New Jersey",
                     Code = "NJ",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/New_Jersey_in_United_States_%28zoom%29.svg/1280px-New_Jersey_in_United_States_%28zoom%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("e3b504bf-70d5-4624-aaf8-a4b570cf89bf"),
+                    Id = 31,
                     Name = "New Mexico",
                     Code = "NM",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/New_Mexico_in_United_States.svg/1280px-New_Mexico_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("458f2015-2a52-4636-ac64-a394d09b3c41"),
+                    Id = 32,
                     Name = "New York",
                     Code = "NY",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/New_York_in_United_States.svg/1280px-New_York_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("8a2f49bb-41ae-4e76-9c05-ffa5b91d453c"),
+                    Id = 33,
                     Name = "North Carolina",
                     Code = "NC",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/North_Carolina_in_United_States.svg/1280px-North_Carolina_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("52e6e5c2-a14f-41cc-8e7a-82399b1dcb30"),
+                    Id = 34,
                     Name = "North Dakota",
                     Code = "ND",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/North_Dakota_in_United_States.svg/1280px-North_Dakota_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("09856d4e-a374-4fd0-8b0f-a3daa2b30bdc"),
+                    Id = 35,
                     Name = "Ohio",
                     Code = "OH",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ohio_in_United_States.svg/1280px-Ohio_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("762600ea-3bba-440b-bfd8-1882eb6f7964"),
+                    Id = 36,
                     Name = "Oklahoma",
                     Code = "OK",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Oklahoma_in_United_States.svg/1280px-Oklahoma_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("b7451c5d-3523-4ec7-bc31-decae478a3d2"),
+                    Id = 37,
                     Name = "Oregon",
                     Code = "OR",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Oregon_in_United_States.svg/1280px-Oregon_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("59ed625c-a10b-442f-994a-f5f84c3d5979"),
+                    Id = 38,
                     Name = "Pennsylvania",
                     Code = "PA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Pennsylvania_in_United_States.svg/1280px-Pennsylvania_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("af74ab9f-c529-48f5-ab29-b5620a753c97"),
+                    Id = 39,
                     Name = "Rhode Island",
                     Code = "RI",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Rhode_Island_in_United_States_%28zoom%29_%28extra_close%29.svg/1280px-Rhode_Island_in_United_States_%28zoom%29_%28extra_close%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("4b78c1e0-c319-49d7-869e-b23c42412453"),
+                    Id = 40,
                     Name = "South Carolina",
                     Code = "SC",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/South_Carolina_in_United_States.svg/1280px-South_Carolina_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("d8b404e7-8ab2-45d6-bcb3-bf897a2e81da"),
+                    Id = 41,
                     Name = "South Dakota",
                     Code = "SD",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/South_Dakota_in_United_States.svg/1280px-South_Dakota_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("6555e146-e35b-4703-bc2b-9eb7ff1ece88"),
+                    Id = 42,
                     Name = "Tennessee",
                     Code = "TN",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Tennessee_in_United_States.svg/1280px-Tennessee_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("6709e992-470c-46f1-82bd-f100527662ed"),
+                    Id = 43,
                     Name = "Texas",
                     Code = "TX",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Texas_in_United_States.svg/1280px-Texas_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("59e4b4c5-4c0d-4c8b-b217-85dcfbad5ec9"),
+                    Id = 44,
                     Name = "Utah",
                     Code = "UT",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Utah_in_United_States.svg/1280px-Utah_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("3e724f37-e25f-4a30-b54b-c1d031b86a67"),
+                    Id = 45,
                     Name = "Vermont",
                     Code = "VT",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Vermont_in_United_States_%28zoom%29.svg/1280px-Vermont_in_United_States_%28zoom%29.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("3c84f6b1-326b-4f79-8b80-7310e56dc45b"),
+                    Id = 46,
                     Name = "Virginia",
                     Code = "VA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Virginia_in_United_States.svg/1280px-Virginia_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("1bf3fec4-c27f-4196-b76c-7a0aae8b5826"),
+                    Id = 47,
                     Name = "Washington",
                     Code = "WA",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Washington_in_United_States.svg/1280px-Washington_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("7ee744c3-6eff-43c4-b4f1-f1c7a11efe2a"),
+                    Id = 48,
                     Name = "West Virginia",
                     Code = "WV",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/West_Virginia_in_United_States.svg/1280px-West_Virginia_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("73c07abe-c049-4b6e-8ab7-99cff7dcc8dc"),
+                    Id = 49,
                     Name = "Wisconsin",
                     Code = "WI",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Wisconsin_in_United_States.svg/1280px-Wisconsin_in_United_States.svg.png"
                 },
                 new State
                 {
-                    Id = Guid.Parse("01b78878-662c-4957-9333-cb249504f7df"),
+                    Id = 50,
                     Name = "Wyoming",
                     Code = "WY",
                     StateImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Wyoming_in_United_States.svg/1280px-Wyoming_in_United_States.svg.png"
@@ -412,14 +412,214 @@ namespace USTrails.API.Data
             // Seed trail data
             var trails = new List<Trail>
             {
-                // 11 National Sceneic Trails
+                // 11 National Scenic Trails
                 new Trail
                 {
                     Id = Guid.Parse("0a8925e9-55d8-492f-8bb4-5f7b7a8c14d5"),
                     Name = "Appalachian Trail",
+                    Description = "The Appalachian Trail is a hiking trail in the Eastern United States, extending " +
+                        "between Springer Mountain in Georgia and Mount Katahdin in Maine. The Appalachian Trail " +
+                        "Conservancy claims the Appalachian Trail to be the longest hiking-only trail in the world. " +
+                        "More than three million people hike segments of the trail each year.",
+                    LengthInMi = 2197.4,
+                    TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/0f/Map_of_Appalachian_Trail.png",
+                    DifficultyId = 4,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "CT").Id,
+                        states.Single(s => s.Code == "GA").Id,
+                        states.Single(s => s.Code == "MA").Id,
+                        states.Single(s => s.Code == "MD").Id,
+                        states.Single(s => s.Code == "ME").Id,
+                        states.Single(s => s.Code == "NC").Id,
+                        states.Single(s => s.Code == "NH").Id,
+                        states.Single(s => s.Code == "NJ").Id,
+                        states.Single(s => s.Code == "NY").Id,
+                        states.Single(s => s.Code == "PA").Id,
+                        states.Single(s => s.Code == "TN").Id,
+                        states.Single(s => s.Code == "VA").Id,
+                        states.Single(s => s.Code == "VT").Id,
+                        states.Single(s => s.Code == "WV").Id
+                    }
                 },
-                // 19 National Historic Trails
+                new Trail
+                {
+                    Id = Guid.Parse("b6d432b2-442d-4cf6-964f-b88c72bdc972"),
+                    Name = "Pacific Crest Trail",
+                    Description = "The Pacific Crest Trail is a long-distance hiking and equestrian trail closely " +
+                        "aligned with the highest portion of the Cascade and Sierra Nevada mountain ranges. The trail's " +
+                        "southern terminus is next to the Mexico–United States border, just south of Campo, California, " +
+                        "and its northern terminus is on the Canada–US border.",
+                    LengthInMi = 2653.0,
+                    TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Locator_Map_of_the_Pacific_Crest_Trail.png",
+                    DifficultyId = 2,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "CA").Id,
+                        states.Single(s => s.Code == "OR").Id,
+                        states.Single(s => s.Code == "WA").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("7c51cf47-a26e-401d-85ea-b906f66b6413"),
+                    Name = "Continental Divide Trail",
+                    Description = "The Continental Divide Trail is a trail between the U.S. border with Chihuahua, Mexico " +
+                        "and the border with Alberta, Canada. It follows the Continental Divide of the Americas along the Rocky " +
+                        "Mountains. Near the Canadian border the trail crosses Triple Divide Pass.",
+                    LengthInMi = 3028.0,
+                    TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/ba/Condivm.png",
+                    DifficultyId = 5,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "MT").Id,
+                        states.Single(s => s.Code == "ID").Id,
+                        states.Single(s => s.Code == "WY").Id,
+                        states.Single(s => s.Code == "CO").Id,
+                        states.Single(s => s.Code == "NM").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("6a403145-11aa-4194-9108-4bbab8700d09"),
+                    Name = "North Country Trail",
+                    Description = "The North Country Trail is a long-distance hiking trail in the Midwestern and Northeastern " +
+                        "United States. The trail extends from Lake Sakakawea State Park in North Dakota to the Appalachian Trail " +
+                        "in Green Mountain National Forest in Vermont.",
+                    LengthInMi = 4800.0,
+                    TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/41/North_Country_Trail_Locator_Map_US.svg",
+                    DifficultyId = 3,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "ND").Id,
+                        states.Single(s => s.Code == "MN").Id,
+                        states.Single(s => s.Code == "WI").Id,
+                        states.Single(s => s.Code == "MI").Id,
+                        states.Single(s => s.Code == "OH").Id,
+                        states.Single(s => s.Code == "PA").Id,
+                        states.Single(s => s.Code == "NY").Id,
+                        states.Single(s => s.Code == "VT").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("a4b04586-c423-49a6-8132-852666353eb2"),
+                    Name = "Ice Age Trail",
+                    Description = "The Ice Age Trail is a trail that roughly follows the location of the terminal moraine from " +
+                        "the last Ice Age. The western end of the trail is at Interstate State Park along the St. Croix River, " +
+                        "and the eastern terminus lies at Potawatomi State Park near the city of Sturgeon Bay.",
+                    LengthInMi = 1200.0,
+                    TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/47/USNPS_Ice-Age-Trail_6d05am.jpg",
+                    DifficultyId = 1,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "WI").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("f5357e24-c626-4615-985b-7d836fa52369"),
+                    Name = "Potomac Heritage Trail",
+                    Description = "The Potomac Heritage Trail is a trail spanning parts of the mid-Atlantic region. The trail " +
+                        "network includes existing and planned sections, tracing the natural, historical, and cultural features of " +
+                        "the Potomac River corridor, the upper Ohio River watershed, and a portion of the Rappahannock River watershed.",
+                    LengthInMi = 710.0,
+                    TrailImageUrl = "https://pnts.org/new/wp-content/uploads/2014/12/Potomac-Heritage-NST-Map.png",
+                    DifficultyId = 2,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "VA").Id,
+                        states.Single(s => s.Code == "MD").Id,
+                        states.Single(s => s.Code == "PA").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("65f33fea-2ac4-4419-acd6-f44281ee643d"),
+                    Name = "Natchez Trace Trail",
+                    Description = "The Natchez Trace Trail is a trail whose route generally follows sections of the Natchez Trace Parkway. " +
+                        "It commemorates the historic Natchez Trace, an ancient path that began as a wildlife and Native American trail, and " +
+                        "has a rich history of use by colonizers, \"Kaintuck\" boatmen, post riders, and military men.",
+                    LengthInMi = 60.0,
+                    TrailImageUrl = "https://pnts.org/new/wp-content/uploads/2014/12/Pink-Natchez-Trace-Map.png",
+                    DifficultyId = 3,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "AL").Id,
+                        states.Single(s => s.Code == "MS").Id,
+                        states.Single(s => s.Code == "TN").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("4c4d7e5e-b7c9-4a0b-9337-9de4e25d208b"),
+                    Name = "Florida Trail",
+                    Description = "The Florida Trail runs from Big Cypress National Preserve to Fort Pickens at Gulf Islands National " +
+                        "Seashore, Pensacola Beach. It provides permanent non-motorized recreation opportunity for hiking and other " +
+                        "compatible activities and is within an hour of most Floridians.",
+                    LengthInMi = 1500.0,
+                    TrailImageUrl = "https://www.journaloffloridastudies.org/images/Florida-Trail-Map.jpg",
+                    DifficultyId = 3,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "FL").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("83c81f00-f422-499c-bb50-1d0405c2aea7"),
+                    Name = "Arizona Trail",
+                    Description = "The Arizona Trail is a trail from Mexico to Utah that traverses the whole north–south length of " +
+                        "Arizona. It begins at the Coronado National Memorial near the US–Mexico border and moves north through parts " +
+                        "of the Huachuca, Santa Rita, and Rincon Mountains, terminating near the Arizona–Utah border in the Kaibab Plateau " +
+                        "region. The trail is designed as a primitive trail for hiking, equestrians, mountain biking, and even cross " +
+                        "country skiing, showcasing the wide variety of mountain ranges and ecosystems of Arizona.",
+                    LengthInMi = 800.0,
+                    TrailImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKKuZO-kxEsTowdn4Mu9j46IAqPXd5KUW89vSi5XUu5g&s",
+                    DifficultyId = 2,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "AZ").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("da7d3e68-38cf-41d3-9291-0e2bc2bcedfa"),
+                    Name = "New England Trail",
+                    Description = "The New England Trail is a trail in southern New England, which includes most of the three single trails " +
+                        "Metacomet-Monadnock Trail, Mattabesett Trail, and Metacomet Trail. It extends through 41 communities from Guilford, " +
+                        "Connecticut, at Long Island Sound over the Metacomet Ridge, through the highlands of the Pioneer Valley of " +
+                        "Massachusetts, to the New Hampshire state border.",
+                    LengthInMi = 215.0,
+                    TrailImageUrl = "https://i0.wp.com/www.jeffryanauthor.com/wp-content/uploads/2019/06/Screen-Shot-2019-06-05-at-4.22.01-PM-1.jpg",
+                    DifficultyId = 3,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "CT").Id,
+                        states.Single(s => s.Code == "MA").Id
+                    }
+                },
+                new Trail
+                {
+                    Id = Guid.Parse("01469432-69c7-4e24-838d-6f74886caec9"),
+                    Name = "Pacific Northwest Trail",
+                    Description = "The Pacific Northwest Trail is a hiking trail running from the Continental Divide in Montana to the Pacific " +
+                        "Ocean on Washington's Olympic Coast. Along the way, the it crosses three national parks, seven national forests, and " +
+                        "two other national scenic trails.",
+                    LengthInMi = 1200.0,
+                    TrailImageUrl = "https://ep1.pinkbike.org/trailstaticmap/35000/route_35184_0_600x315.png",
+                    DifficultyId = 5,
+                    StateIds =
+                    {
+                        states.Single(s => s.Code == "MT").Id,
+                        states.Single(s => s.Code == "ID").Id,
+                        states.Single(s => s.Code == "WA").Id
+                    }
+                }
+
+                // TODO: 19 National Historic Trails
             };
+            modelBuilder.Entity<Trail>().HasData(trails);
         }
     }
 }

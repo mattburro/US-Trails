@@ -29,8 +29,8 @@ namespace USTrails.API.Controllers
             return Ok(mapper.Map<List<StateDto>>(states));
         }
 
-        [HttpGet("{id:Guid}")]
-        public async Task<IActionResult> GetById([FromRoute] Guid id)
+        [HttpGet("{id:byte}")]
+        public async Task<IActionResult> GetById([FromRoute] byte id)
         {
             // Get matching state from database
             var state = await stateRepository.GetByIdAsync(id);

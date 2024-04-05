@@ -8,6 +8,6 @@
         public double LengthInMi { get; set; }
         public string? TrailImageUrl { get; set; }
         public DifficultyDto Difficulty { get; set; }
-        public List<StateDto> States { get; set; } = [];
+        public ICollection<StateDto> States { get; set; } = new List<StateDto>();
     }
 }

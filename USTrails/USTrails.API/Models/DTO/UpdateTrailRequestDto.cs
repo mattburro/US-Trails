@@ -14,8 +14,8 @@ namespace USTrails.API.Models.DTO
 
         public string? TrailImageUrl { get; set; }
 
-        public Guid? DifficultyId { get; set; }
+        public byte? DifficultyId { get; set; }
 
-        public List<Guid>? StateIds { get; set; }
+        public List<byte>? StateIds { get; set; }
     }
 }

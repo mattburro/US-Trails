@@ -29,8 +29,8 @@ namespace USTrails.API.Controllers
             return Ok(difficulties);
         }
 
-        [HttpGet("{id:Guid}")]
-        public async Task<IActionResult> GetById([FromRoute] Guid id)
+        [HttpGet("{id:byte}")]
+        public async Task<IActionResult> GetById([FromRoute] byte id)
         {
             // Get difficulty from database
             var difficulty = await difficultyRepository.GetByIdAsync(id);
