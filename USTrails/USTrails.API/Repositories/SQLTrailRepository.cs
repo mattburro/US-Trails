@@ -23,9 +23,7 @@ namespace USTrails.API.Repositories
                 Description = createRequest.Description,
                 LengthInMi = createRequest.LengthInMi,
                 TrailImageUrl = createRequest.TrailImageUrl,
-                DifficultyId = createRequest.DifficultyId,
                 Difficulty = dbContext.Difficulties.Single(d => d.Id == createRequest.DifficultyId),
-                StateIds = createRequest.StateIds,
                 States = createRequest.StateIds.Select(id => dbContext.States.Single(s => s.Id ==  id)).ToList()
             };
 
@@ -54,14 +52,12 @@ namespace USTrails.API.Repositories
                 return null;
             }
 
-            existingTrail.Name = updateRequest.Name;
-            existingTrail.Description = updateRequest.Description;
-            existingTrail.LengthInMi = updateRequest.LengthInMi;
-            existingTrail.TrailImageUrl = updateRequest.TrailImageUrl;
-            existingTrail.DifficultyId = updateRequest.DifficultyId;
-            existingTrail.Difficulty = dbContext.Difficulties.Single(d => d.Id == updateRequest.DifficultyId);
-            existingTrail.StateIds = updateRequest.StateIds;
-            existingTrail.States = updateRequest.StateIds.Select(id => dbContext.States.Single(s => s.Id == id)).ToList();
+            if (updateRequest.Name != null) existingTrail.Name = updateRequest.Name;
+            if (updateRequest.Description != null) existingTrail.Description = updateRequest.Description;
+            if (updateRequest.LengthInMi != null) existingTrail.LengthInMi = updateRequest.LengthInMi.Value;
+            if (updateRequest.TrailImageUrl != null) existingTrail.TrailImageUrl = updateRequest.TrailImageUrl;
+            if (updateRequest.DifficultyId != null) existingTrail.Difficulty = dbContext.Difficulties.Single(d => d.Id == updateRequest.DifficultyId.Value);
+            if (updateRequest.StateIds != null) existingTrail.States = updateRequest.StateIds.Select(id => dbContext.States.Single(s => s.Id == id)).ToList();
 
             await dbContext.SaveChangesAsync();
 

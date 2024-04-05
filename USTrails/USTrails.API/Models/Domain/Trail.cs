@@ -7,8 +7,6 @@
         public string Description { get; set; }
         public double LengthInMi { get; set; }
         public string? TrailImageUrl { get; set; }
-        public Guid DifficultyId { get; set; }
-        public List<Guid> StateIds { get; set; }
 
         #region Navigation Properties
         public Difficulty Difficulty { get; set; }
