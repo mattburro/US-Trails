@@ -18,7 +18,7 @@ namespace USTrails.API.Repositories
             return await dbContext.Difficulties.ToListAsync();
         }
 
-        public async Task<Difficulty?> GetByIdAsync(byte id)
+        public async Task<Difficulty?> GetByIdAsync(short id)
         {
             return await dbContext.Difficulties.SingleOrDefaultAsync(d => d.Id == id);
         }

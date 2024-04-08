@@ -5,6 +5,6 @@ namespace USTrails.API.Repositories
     public interface IDifficultyRepository
     {
         Task<List<Difficulty>> GetAllAsync();
-        Task<Difficulty> GetByIdAsync(byte id);
+        Task<Difficulty> GetByIdAsync(short id);
     }
 }

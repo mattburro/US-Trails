@@ -18,7 +18,7 @@ namespace USTrails.API.Repositories
             return await dbContext.States.ToListAsync();
         }
 
-        public async Task<State?> GetByIdAsync(byte id)
+        public async Task<State?> GetByIdAsync(short id)
         {
             return await dbContext.States.FirstOrDefaultAsync(r => r.Id == id);
         }

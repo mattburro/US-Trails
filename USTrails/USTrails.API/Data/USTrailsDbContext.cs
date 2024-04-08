@@ -13,10 +13,8 @@ namespace USTrails.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            // Create uni-directional many-to-many relationship from Trails to States
-            modelBuilder.Entity<Trail>().HasMany(t => t.States).WithMany();
+            // Create uni-directional many-to-many relationship between Trails and States
+            modelBuilder.Entity<Trail>().HasMany(t => t.States).WithMany().UsingEntity<StateTrail>();
 
             // Always include all Trail navigation properties
             modelBuilder.Entity<Trail>().Navigation(t => t.Difficulty).AutoInclude();
@@ -423,24 +421,7 @@ namespace USTrails.API.Data
                         "More than three million people hike segments of the trail each year.",
                     LengthInMi = 2197.4,
                     TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/0/0f/Map_of_Appalachian_Trail.png",
-                    DifficultyId = 4,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "CT").Id,
-                        states.Single(s => s.Code == "GA").Id,
-                        states.Single(s => s.Code == "MA").Id,
-                        states.Single(s => s.Code == "MD").Id,
-                        states.Single(s => s.Code == "ME").Id,
-                        states.Single(s => s.Code == "NC").Id,
-                        states.Single(s => s.Code == "NH").Id,
-                        states.Single(s => s.Code == "NJ").Id,
-                        states.Single(s => s.Code == "NY").Id,
-                        states.Single(s => s.Code == "PA").Id,
-                        states.Single(s => s.Code == "TN").Id,
-                        states.Single(s => s.Code == "VA").Id,
-                        states.Single(s => s.Code == "VT").Id,
-                        states.Single(s => s.Code == "WV").Id
-                    }
+                    DifficultyId = 4
                 },
                 new Trail
                 {
@@ -452,13 +433,7 @@ namespace USTrails.API.Data
                         "and its northern terminus is on the Canada–US border.",
                     LengthInMi = 2653.0,
                     TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Locator_Map_of_the_Pacific_Crest_Trail.png",
-                    DifficultyId = 2,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "CA").Id,
-                        states.Single(s => s.Code == "OR").Id,
-                        states.Single(s => s.Code == "WA").Id
-                    }
+                    DifficultyId = 2
                 },
                 new Trail
                 {
@@ -469,15 +444,7 @@ namespace USTrails.API.Data
                         "Mountains. Near the Canadian border the trail crosses Triple Divide Pass.",
                     LengthInMi = 3028.0,
                     TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/ba/Condivm.png",
-                    DifficultyId = 5,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "MT").Id,
-                        states.Single(s => s.Code == "ID").Id,
-                        states.Single(s => s.Code == "WY").Id,
-                        states.Single(s => s.Code == "CO").Id,
-                        states.Single(s => s.Code == "NM").Id
-                    }
+                    DifficultyId = 5
                 },
                 new Trail
                 {
@@ -488,18 +455,7 @@ namespace USTrails.API.Data
                         "in Green Mountain National Forest in Vermont.",
                     LengthInMi = 4800.0,
                     TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/41/North_Country_Trail_Locator_Map_US.svg",
-                    DifficultyId = 3,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "ND").Id,
-                        states.Single(s => s.Code == "MN").Id,
-                        states.Single(s => s.Code == "WI").Id,
-                        states.Single(s => s.Code == "MI").Id,
-                        states.Single(s => s.Code == "OH").Id,
-                        states.Single(s => s.Code == "PA").Id,
-                        states.Single(s => s.Code == "NY").Id,
-                        states.Single(s => s.Code == "VT").Id
-                    }
+                    DifficultyId = 3
                 },
                 new Trail
                 {
@@ -510,11 +466,7 @@ namespace USTrails.API.Data
                         "and the eastern terminus lies at Potawatomi State Park near the city of Sturgeon Bay.",
                     LengthInMi = 1200.0,
                     TrailImageUrl = "https://upload.wikimedia.org/wikipedia/commons/4/47/USNPS_Ice-Age-Trail_6d05am.jpg",
-                    DifficultyId = 1,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "WI").Id
-                    }
+                    DifficultyId = 1
                 },
                 new Trail
                 {
@@ -525,13 +477,7 @@ namespace USTrails.API.Data
                         "the Potomac River corridor, the upper Ohio River watershed, and a portion of the Rappahannock River watershed.",
                     LengthInMi = 710.0,
                     TrailImageUrl = "https://pnts.org/new/wp-content/uploads/2014/12/Potomac-Heritage-NST-Map.png",
-                    DifficultyId = 2,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "VA").Id,
-                        states.Single(s => s.Code == "MD").Id,
-                        states.Single(s => s.Code == "PA").Id
-                    }
+                    DifficultyId = 2
                 },
                 new Trail
                 {
@@ -542,13 +488,7 @@ namespace USTrails.API.Data
                         "has a rich history of use by colonizers, \"Kaintuck\" boatmen, post riders, and military men.",
                     LengthInMi = 60.0,
                     TrailImageUrl = "https://pnts.org/new/wp-content/uploads/2014/12/Pink-Natchez-Trace-Map.png",
-                    DifficultyId = 3,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "AL").Id,
-                        states.Single(s => s.Code == "MS").Id,
-                        states.Single(s => s.Code == "TN").Id
-                    }
+                    DifficultyId = 3
                 },
                 new Trail
                 {
@@ -559,11 +499,7 @@ namespace USTrails.API.Data
                         "compatible activities and is within an hour of most Floridians.",
                     LengthInMi = 1500.0,
                     TrailImageUrl = "https://www.journaloffloridastudies.org/images/Florida-Trail-Map.jpg",
-                    DifficultyId = 3,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "FL").Id
-                    }
+                    DifficultyId = 3
                 },
                 new Trail
                 {
@@ -576,11 +512,7 @@ namespace USTrails.API.Data
                         "country skiing, showcasing the wide variety of mountain ranges and ecosystems of Arizona.",
                     LengthInMi = 800.0,
                     TrailImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKKuZO-kxEsTowdn4Mu9j46IAqPXd5KUW89vSi5XUu5g&s",
-                    DifficultyId = 2,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "AZ").Id
-                    }
+                    DifficultyId = 2
                 },
                 new Trail
                 {
@@ -592,12 +524,7 @@ namespace USTrails.API.Data
                         "Massachusetts, to the New Hampshire state border.",
                     LengthInMi = 215.0,
                     TrailImageUrl = "https://i0.wp.com/www.jeffryanauthor.com/wp-content/uploads/2019/06/Screen-Shot-2019-06-05-at-4.22.01-PM-1.jpg",
-                    DifficultyId = 3,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "CT").Id,
-                        states.Single(s => s.Code == "MA").Id
-                    }
+                    DifficultyId = 3
                 },
                 new Trail
                 {
@@ -608,18 +535,71 @@ namespace USTrails.API.Data
                         "two other national scenic trails.",
                     LengthInMi = 1200.0,
                     TrailImageUrl = "https://ep1.pinkbike.org/trailstaticmap/35000/route_35184_0_600x315.png",
-                    DifficultyId = 5,
-                    StateIds =
-                    {
-                        states.Single(s => s.Code == "MT").Id,
-                        states.Single(s => s.Code == "ID").Id,
-                        states.Single(s => s.Code == "WA").Id
-                    }
+                    DifficultyId = 5
                 }
 
                 // TODO: 19 National Historic Trails
             };
             modelBuilder.Entity<Trail>().HasData(trails);
+
+            // Seed StateTrail data
+            var stateTrails = new List<StateTrail>
+            {
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "CT").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "GA").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "MA").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "MD").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "ME").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "NC").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "NH").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "NJ").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "PA").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "TN").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "VA").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "VT").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Appalachian Trail").Id, StateId = states.Single(s => s.Code == "WV").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Pacific Crest Trail").Id, StateId = states.Single(s => s.Code == "CA").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Pacific Crest Trail").Id, StateId = states.Single(s => s.Code == "OR").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Pacific Crest Trail").Id, StateId = states.Single(s => s.Code == "WA").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Continental Divide Trail").Id, StateId = states.Single(s => s.Code == "MT").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Continental Divide Trail").Id, StateId = states.Single(s => s.Code == "ID").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Continental Divide Trail").Id, StateId = states.Single(s => s.Code == "WY").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Continental Divide Trail").Id, StateId = states.Single(s => s.Code == "CO").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Continental Divide Trail").Id, StateId = states.Single(s => s.Code == "NM").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "ND").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "MN").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "WI").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "MI").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "OH").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "PA").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "NY").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "North Country Trail").Id, StateId = states.Single(s => s.Code == "VT").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Ice Age Trail").Id, StateId = states.Single(s => s.Code == "WI").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Potomac Heritage Trail").Id, StateId = states.Single(s => s.Code == "VA").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Potomac Heritage Trail").Id, StateId = states.Single(s => s.Code == "MD").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Potomac Heritage Trail").Id, StateId = states.Single(s => s.Code == "PA").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Natchez Trace Trail").Id, StateId = states.Single(s => s.Code == "AL").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Natchez Trace Trail").Id, StateId = states.Single(s => s.Code == "MS").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Natchez Trace Trail").Id, StateId = states.Single(s => s.Code == "TN").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Florida Trail").Id, StateId = states.Single(s => s.Code == "FL").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Arizona Trail").Id, StateId = states.Single(s => s.Code == "AZ").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "New England Trail").Id, StateId = states.Single(s => s.Code == "CT").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "New England Trail").Id, StateId = states.Single(s => s.Code == "MA").Id },
+
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Pacific Northwest Trail").Id, StateId = states.Single(s => s.Code == "MT").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Pacific Northwest Trail").Id, StateId = states.Single(s => s.Code == "ID").Id },
+                new StateTrail { TrailId = trails.Single(t => t.Name == "Pacific Northwest Trail").Id, StateId = states.Single(s => s.Code == "WA").Id },
+            };
+            modelBuilder.Entity<StateTrail>().HasData(stateTrails);
         }
     }
 }

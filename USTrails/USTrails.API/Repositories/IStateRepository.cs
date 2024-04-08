@@ -6,6 +6,6 @@ namespace USTrails.API.Repositories
     {
         Task<List<State>> GetAllAsync();
 
-        Task<State?> GetByIdAsync(byte id);
+        Task<State?> GetByIdAsync(short id);
     }
 }

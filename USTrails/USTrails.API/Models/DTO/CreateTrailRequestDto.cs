@@ -18,9 +18,9 @@ namespace USTrails.API.Models.DTO
         public string? TrailImageUrl { get; set; }
 
         [Required]
-        public byte DifficultyId { get; set; }
+        public short DifficultyId { get; set; }
 
         [Required]
-        public List<byte> StateIds { get; set; }
+        public List<short> StateIds { get; set; }
     }
 }
