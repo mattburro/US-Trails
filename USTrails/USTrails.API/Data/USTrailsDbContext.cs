@@ -5,7 +5,7 @@ namespace USTrails.API.Data
 {
     public class USTrailsDbContext : DbContext
     {
-        public USTrailsDbContext(DbContextOptions options) : base(options) { }
+        public USTrailsDbContext(DbContextOptions<USTrailsDbContext> options) : base(options) { }
 
         public DbSet<Difficulty> Difficulties { get; set; }
         public DbSet<State> States { get; set; }
@@ -13,6 +13,8 @@ namespace USTrails.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             // Create uni-directional many-to-many relationship between Trails and States
             modelBuilder.Entity<Trail>().HasMany(t => t.States).WithMany().UsingEntity<StateTrail>();
 

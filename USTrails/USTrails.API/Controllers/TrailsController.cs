@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using USTrails.API.Models.Domain;
@@ -21,16 +22,18 @@ namespace USTrails.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateTrailRequestDto createRequestDto)
+        [Authorize(Roles = "Writer")]
+        public async Task<IActionResult> Create([FromBody] CreateTrailRequestDto createTrailRequestDto)
         {
             // Use request model to create trail
-            var createdTrail = await trailRepository.CreateAsync(createRequestDto);
+            var createdTrail = await trailRepository.CreateAsync(createTrailRequestDto);
 
             // Return DTO
             return Ok(mapper.Map<TrailDto>(createdTrail));
         }
 
         [HttpGet]
+        [Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterValue,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
@@ -42,6 +45,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpGet("{id:Guid}")]
+        [Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             // Get trail from database
@@ -58,10 +62,11 @@ namespace USTrails.API.Controllers
         }
 
         [HttpPut("{id:Guid}")]
-        public async Task<IActionResult> Update([FromRoute] Guid id, UpdateTrailRequestDto updateRequestDto)
+        [Authorize(Roles = "Writer")]
+        public async Task<IActionResult> Update([FromRoute] Guid id, UpdateTrailRequestDto updateTrailRequestDto)
         {
             // Use request model to update trail
-            var updatedTrail = await trailRepository.UpdateAsync(id, updateRequestDto);
+            var updatedTrail = await trailRepository.UpdateAsync(id, updateTrailRequestDto);
 
             // No trail found
             if (updatedTrail == null)
@@ -74,6 +79,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             // Delete trail using id

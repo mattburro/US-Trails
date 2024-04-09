@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using USTrails.API.Models.Domain;
 using USTrails.API.Models.DTO;
 using USTrails.API.Repositories;
 
@@ -8,6 +8,7 @@ namespace USTrails.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class StatesController : ControllerBase
     {
         private readonly IStateRepository stateRepository;

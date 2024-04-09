@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using USTrails.API.Models.DTO;
@@ -8,6 +9,7 @@ namespace USTrails.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class DifficultiesController : ControllerBase
     {
         private readonly IDifficultyRepository difficultyRepository;
