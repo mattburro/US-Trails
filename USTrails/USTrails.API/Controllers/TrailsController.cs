@@ -32,10 +32,10 @@ namespace USTrails.API.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterValue,
-            [FromQuery] string? sortBy, [FromQuery] bool? isAscending)
+            [FromQuery] string? sortBy, [FromQuery] bool? isAscending, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
             // Get trails from database
-            var trails = await trailRepository.GetAllAsync(filterOn, filterValue, sortBy, isAscending ?? true);
+            var trails = await trailRepository.GetAllAsync(filterOn, filterValue, sortBy, isAscending ?? true, pageNumber, pageSize);
 
             // Return DTOs
             return Ok(mapper.Map<List<TrailDto>>(trails));

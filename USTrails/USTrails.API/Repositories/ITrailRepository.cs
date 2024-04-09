@@ -7,7 +7,7 @@ namespace USTrails.API.Repositories
     {
         Task<Trail> CreateAsync(CreateTrailRequestDto createRequest);
         Task<List<Trail>> GetAllAsync(string? filterOn = null, string? filterValue = null,
-            string? sortBy = null, bool? isAscending = true);
+            string? sortBy = null, bool isAscending = true, int pageNumber = 1, int pageSize = 10);
         Task<Trail?> GetByIdAsync(Guid id);
         Task<Trail?> UpdateAsync(Guid id, UpdateTrailRequestDto updateRequest);
         Task<Trail?> DeleteAsync(Guid id);

@@ -34,7 +34,7 @@ namespace USTrails.API.Repositories
         }
 
         public async Task<List<Trail>> GetAllAsync(string? filterOn = null, string? filterValue = null,
-            string? sortBy = null, bool? isAscending = true)
+            string? sortBy = null, bool isAscending = true, int pageNumber = 1, int pageSize = 10)
         {
             var trails = dbContext.Trails.AsQueryable();
 
@@ -51,16 +51,19 @@ namespace USTrails.API.Repositories
             }
 
             // Sorting
-            if (!string.IsNullOrWhiteSpace(sortBy) && isAscending != null)
+            if (!string.IsNullOrWhiteSpace(sortBy))
             {
                 trails = sortBy.ToLower().Trim() switch
                 {
-                    "name" => isAscending.Value ? trails.OrderBy(t => t.Name) : trails.OrderByDescending(t => t.Name),
-                    "length" => isAscending.Value ? trails.OrderBy(t => t.LengthInMi) : trails.OrderByDescending(t => t.LengthInMi),
-                    "difficulty" => isAscending.Value ? trails.OrderBy(t => t.DifficultyId) : trails.OrderByDescending(t => t.DifficultyId),
+                    "name" => isAscending ? trails.OrderBy(t => t.Name) : trails.OrderByDescending(t => t.Name),
+                    "length" => isAscending ? trails.OrderBy(t => t.LengthInMi) : trails.OrderByDescending(t => t.LengthInMi),
+                    "difficulty" => isAscending ? trails.OrderBy(t => t.DifficultyId) : trails.OrderByDescending(t => t.DifficultyId),
                     _ => throw new ArgumentException($"'{sortBy}' property doesn't exist or isn't supported for sorting.")
                 };
             }
+
+            // Pagination
+            trails = trails.Skip((pageNumber - 1) * pageSize).Take(pageSize);
 
             return await trails.ToListAsync();
         }
