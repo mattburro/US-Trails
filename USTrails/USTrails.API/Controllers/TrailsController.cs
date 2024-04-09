@@ -31,10 +31,11 @@ namespace USTrails.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterValue)
+        public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterValue,
+            [FromQuery] string? sortBy, [FromQuery] bool? isAscending)
         {
             // Get trails from database
-            var trails = await trailRepository.GetAllAsync(filterOn, filterValue);
+            var trails = await trailRepository.GetAllAsync(filterOn, filterValue, sortBy, isAscending ?? true);
 
             // Return DTOs
             return Ok(mapper.Map<List<TrailDto>>(trails));

@@ -33,7 +33,8 @@ namespace USTrails.API.Repositories
             return trail;
         }
 
-        public async Task<List<Trail>> GetAllAsync(string? filterOn = null, string? filterValue = null)
+        public async Task<List<Trail>> GetAllAsync(string? filterOn = null, string? filterValue = null,
+            string? sortBy = null, bool? isAscending = true)
         {
             var trails = dbContext.Trails.AsQueryable();
 
@@ -45,7 +46,19 @@ namespace USTrails.API.Repositories
                     "name" => trails.Where(t => t.Name.ToLower().Contains(filterValue.ToLower())),
                     "length" => trails.Where(t => t.LengthInMi >= double.Parse(filterValue)),
                     "difficulty" => trails.Where(t => t.DifficultyId == short.Parse(filterValue)),
-                    _ => throw new ArgumentException($"'{filterOn}' property doess not exist on {nameof(Trail)} model.")
+                    _ => throw new ArgumentException($"'{filterOn}' property doesn't exist or isn't supported for filtering.")
+                };
+            }
+
+            // Sorting
+            if (!string.IsNullOrWhiteSpace(sortBy) && isAscending != null)
+            {
+                trails = sortBy.ToLower().Trim() switch
+                {
+                    "name" => isAscending.Value ? trails.OrderBy(t => t.Name) : trails.OrderByDescending(t => t.Name),
+                    "length" => isAscending.Value ? trails.OrderBy(t => t.LengthInMi) : trails.OrderByDescending(t => t.LengthInMi),
+                    "difficulty" => isAscending.Value ? trails.OrderBy(t => t.DifficultyId) : trails.OrderByDescending(t => t.DifficultyId),
+                    _ => throw new ArgumentException($"'{sortBy}' property doesn't exist or isn't supported for sorting.")
                 };
             }
 
