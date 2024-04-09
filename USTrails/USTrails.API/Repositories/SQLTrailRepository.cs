@@ -33,9 +33,23 @@ namespace USTrails.API.Repositories
             return trail;
         }
 
-        public async Task<List<Trail>> GetAllAsync()
+        public async Task<List<Trail>> GetAllAsync(string? filterOn = null, string? filterValue = null)
         {
-            return await dbContext.Trails.ToListAsync();
+            var trails = dbContext.Trails.AsQueryable();
+
+            // Filtering
+            if (!string.IsNullOrWhiteSpace(filterOn) && !string.IsNullOrWhiteSpace(filterValue))
+            {
+                trails = filterOn.ToLower().Trim() switch
+                {
+                    "name" => trails.Where(t => t.Name.ToLower().Contains(filterValue.ToLower())),
+                    "length" => trails.Where(t => t.LengthInMi >= double.Parse(filterValue)),
+                    "difficulty" => trails.Where(t => t.DifficultyId == short.Parse(filterValue)),
+                    _ => throw new ArgumentException($"'{filterOn}' property doess not exist on {nameof(Trail)} model.")
+                };
+            }
+
+            return await trails.ToListAsync();
         }
 
         public async Task<Trail?> GetByIdAsync(Guid id)

@@ -31,10 +31,10 @@ namespace USTrails.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterValue)
         {
             // Get trails from database
-            var trails = await trailRepository.GetAllAsync();
+            var trails = await trailRepository.GetAllAsync(filterOn, filterValue);
 
             // Return DTOs
             return Ok(mapper.Map<List<TrailDto>>(trails));
