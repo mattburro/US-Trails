@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using USTrails.API.Data;
 
@@ -11,9 +12,11 @@ using USTrails.API.Data;
 namespace USTrails.API.Migrations
 {
     [DbContext(typeof(USTrailsDbContext))]
-    partial class USTrailsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240409140513_Update national scenic trail name and description data")]
+    partial class Updatenationalscenictrailnameanddescriptiondata
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
