@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -18,6 +19,7 @@ namespace USTrails.API
 
             // Add services to the container.
             builder.Services.AddControllers();
+            builder.Services.AddHttpContextAccessor();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
@@ -61,6 +63,7 @@ namespace USTrails.API
             builder.Services.AddScoped<ITrailRepository, SQLTrailRepository>();
             builder.Services.AddScoped<IDifficultyRepository, SQLDifficultyRepository>();
             builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+            builder.Services.AddScoped<IImageRepository, LocalImageRepository>();
 
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
@@ -104,6 +107,12 @@ namespace USTrails.API
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                RequestPath = "/Images",
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images"))
+            });
 
             app.MapControllers();
 
