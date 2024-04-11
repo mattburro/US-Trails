@@ -8,7 +8,7 @@ namespace USTrails.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class StatesController : ControllerBase
     {
         private readonly IStateRepository stateRepository;

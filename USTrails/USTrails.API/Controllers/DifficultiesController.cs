@@ -9,7 +9,7 @@ namespace USTrails.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class DifficultiesController : ControllerBase
     {
         private readonly IDifficultyRepository difficultyRepository;

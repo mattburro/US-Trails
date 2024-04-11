@@ -20,7 +20,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Writer")]
+        //[Authorize(Roles = "Writer")]
         public async Task<IActionResult> Create([FromBody] CreateTrailRequestDto createTrailRequestDto)
         {
             // Use request model to create trail
@@ -31,7 +31,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Reader")]
+        //[Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetAll([FromQuery] string? filterOn, [FromQuery] string? filterValue,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
@@ -43,7 +43,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpGet("{id:Guid}")]
-        [Authorize(Roles = "Reader")]
+        //[Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             // Get trail from database
@@ -60,7 +60,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpPut("{id:Guid}")]
-        [Authorize(Roles = "Writer")]
+        //[Authorize(Roles = "Writer")]
         public async Task<IActionResult> Update([FromRoute] Guid id, UpdateTrailRequestDto updateTrailRequestDto)
         {
             // Use request model to update trail
@@ -77,7 +77,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
-        [Authorize(Roles = "Writer")]
+        //[Authorize(Roles = "Writer")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             // Delete trail using id

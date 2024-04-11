@@ -21,7 +21,7 @@ namespace USTrails.API.Controllers
         }
 
         [HttpPost("Upload")]
-        [Authorize(Roles = "Writer")]
+        //[Authorize(Roles = "Writer")]
         public async Task<IActionResult> Upload([FromForm] CreateImageRequestDto createImageRequestDto)
         {
             ValidateImageUploadRequest(createImageRequestDto);
