@@ -8,6 +8,7 @@ using Serilog;
 using System.Text;
 using USTrails.API.Data;
 using USTrails.API.Mappings;
+using USTrails.API.Middleware;
 using USTrails.API.Repositories;
 
 namespace USTrails.API
@@ -114,6 +115,8 @@ namespace USTrails.API
             }
 
             app.UseHttpsRedirection();
+
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseAuthentication();
             app.UseAuthorization();
