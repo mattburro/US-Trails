@@ -1,0 +1,33 @@
+﻿@model List<USTrails.UI.Models.DTO.TrailDto>
+
+<h1 class="mt-3">Trails</h1>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-secondary" asp-controller="Trails" asp-action="Create">Add Trail</a>
+</div>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Length</th>
+            <th>Difficulty</th>
+            <th>Description</th>
+            <th>States</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var trail in Model)
+        {
+            <tr>
+                <td>@trail.Id</td>
+                <td>@trail.Name</td>
+                <td>@trail.LengthInMi mi</td>
+                <td>@trail.Difficulty.Name</td>
+                <td>@trail.Description</td>
+                <td>@string.Join(", ", trail.States.Select(s => s.Code))</td>
+            </tr>
+        }
+    </tbody>
+</table>

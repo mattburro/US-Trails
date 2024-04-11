@@ -1,0 +1,24 @@
+﻿@model List<USTrails.UI.Models.DTO.StateDto>
+
+<h1 class="mt-3">States</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var state in Model)
+        {
+            <tr>
+                <td>@state.Id</td>
+                <td>@state.Code</td>
+                <td>@state.Name</td>
+                <td><img src="@state.StateImageUrl" style="width:50px" /></td>
+            </tr>
+        }
+    </tbody>
+</table>
