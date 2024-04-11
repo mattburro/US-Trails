@@ -36,7 +36,7 @@ namespace USTrails.API.Repositories
         public async Task<List<Trail>> GetAllAsync(string? filterOn = null, string? filterValue = null,
             string? sortBy = null, bool isAscending = true, int pageNumber = 1, int pageSize = 10)
         {
-            var trails = dbContext.Trails.AsQueryable();
+            var trails = dbContext.Trails.OrderBy(t => t.Id).AsQueryable();
 
             // Filtering
             if (!string.IsNullOrWhiteSpace(filterOn) && !string.IsNullOrWhiteSpace(filterValue))

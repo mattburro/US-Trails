@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using USTrails.API.Models.Domain;
 using USTrails.API.Models.DTO;
 using USTrails.API.Repositories;
 

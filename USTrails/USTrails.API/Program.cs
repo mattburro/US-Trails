@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Text;
 using USTrails.API.Data;
 using USTrails.API.Mappings;
@@ -16,6 +17,15 @@ namespace USTrails.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Add logging.
+            var logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .WriteTo.File($"Logs/{DateTime.Now.Year}-{DateTime.Now.Month}/Log_.txt", rollingInterval: RollingInterval.Day)
+                .MinimumLevel.Error()
+                .CreateLogger();
+            builder.Logging.ClearProviders();
+            builder.Logging.AddSerilog(logger);
 
             // Add services to the container.
             builder.Services.AddControllers();
