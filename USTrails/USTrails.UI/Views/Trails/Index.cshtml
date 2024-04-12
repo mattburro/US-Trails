@@ -27,6 +27,11 @@
                 <td>@trail.Difficulty.Name</td>
                 <td>@trail.Description</td>
                 <td>@string.Join(", ", trail.States.Select(s => s.Code))</td>
+                <td>
+                    <a class="btn btn-light" asp-controller="Trails" asp-action="Edit" asp-route-id="@trail.Id">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

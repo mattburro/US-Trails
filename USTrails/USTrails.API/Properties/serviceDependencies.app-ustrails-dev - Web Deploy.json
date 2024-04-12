@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/app-ustrails-dev/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsUSTrailsConnectionStrin_39F7024E3C",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/sqlserver-ustrails-dev/databases/sqldb-ustrails-dev",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:USTrailsConnectionString",
+      "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/app-ustrails-dev/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsUSTrailsAuthConnectionS_4EED5EE4B3",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/sqlserver-ustrails-dev/databases/sqldb-ustrails-dev",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:USTrailsAuthConnectionString",
+      "dynamicId": null
+    }
+  }
+}

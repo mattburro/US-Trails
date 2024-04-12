@@ -16,7 +16,7 @@ namespace USTrails.UI.Controllers
         public async Task<IActionResult> Index()
         {
             // Get all states from API
-            var client = httpClientFactory.CreateClient();
+            using var client = httpClientFactory.CreateClient();
             var response = await client.GetAsync($"https://localhost:7016/api/states");
 
             response.EnsureSuccessStatusCode();
